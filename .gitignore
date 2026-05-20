@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/*.csv
+data/*.parquet
+mlruns/
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+.vscode/
+
+# repo HF séparé — géré indépendamment
+cc-fraud-api-hf/
+
+# Others
+projet_structure.md
