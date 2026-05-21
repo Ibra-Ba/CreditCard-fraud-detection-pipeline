@@ -1,19 +1,16 @@
-.PHONY: install train produce consume report orchestrate test deploy-api
+.PHONY: install train produce consume report test
 
 install:
 	pip install -r requirements.txt
 
 train:
-	python src/train.py
+	python -m src.train
 
 produce:
-	python src/streaming/producer.py
+	python -m src.streaming.producer
 
 consume:
-	python src/streaming/consumer.py
-
-orchestrate:
-	python src/orchestration/daily_pipeline.py
+	python -m src.streaming.consumer
 
 report:
 	streamlit run src/report/dashboard.py
