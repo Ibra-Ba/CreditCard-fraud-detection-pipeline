@@ -17,7 +17,6 @@ psycopg2-binary==2.9.9
 
 # Orchestration
 prefect==2.19.0
-prefect-sqlalchemy==0.4.1
 
 # Alertes & utils
 python-dotenv==1.0.1
