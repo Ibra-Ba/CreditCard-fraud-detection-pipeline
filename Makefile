@@ -18,6 +18,9 @@ report:
 test:
 	pytest tests/ -v --cov=src --cov-report=term-missing
 
+orchestrate:
+	python -m src.orchestration.daily_pipeline
+
 HF_API_REPO=../cc-fraud-sentinel
 
 deploy-api:
