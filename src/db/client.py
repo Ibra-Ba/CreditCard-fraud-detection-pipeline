@@ -16,6 +16,7 @@ def insert_transaction(record: dict) -> None:
     Insère une transaction enrichie de sa prédiction.
     ON CONFLICT ignore les doublons (trans_num unique).
     """
+    record = {**record, "is_fraud_actual": bool(record.get("is_fraud_actual", False))}
     sql = """
         INSERT INTO transactions (
             trans_num, cc_num, amt, category, gender, city_pop,

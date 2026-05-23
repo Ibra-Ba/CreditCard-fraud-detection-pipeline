@@ -13,7 +13,7 @@ consume:
 	python -m src.streaming.consumer
 
 report:
-	streamlit run src/report/dashboard.py
+	python -m streamlit run src/report/dashboard.py
 
 test:
 	pytest tests/ -v --cov=src --cov-report=term-missing
