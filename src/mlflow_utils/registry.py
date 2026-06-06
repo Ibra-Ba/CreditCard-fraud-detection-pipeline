@@ -25,5 +25,5 @@ def load_champion() -> object:
 
 
 if __name__ == "__main__":
-    run1_id = "bd22394b059445c887c821553615986f"
+    #run1_id = "bd22394b059445c887c821553615986f"
     promote_champion(run_id=run1_id)
