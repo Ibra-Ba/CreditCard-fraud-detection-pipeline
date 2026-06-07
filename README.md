@@ -140,7 +140,7 @@ cc-fraud-pipeline/
 ## Installation
 
 ```bash
-git clone https://github.com/<username>/cc-fraud-pipeline
+git clone https://github.com/VoxUp/cc-fraud-pipeline
 cd cc-fraud-pipeline
 python -m venv venv
 source venv/bin/activate
@@ -167,22 +167,22 @@ DATABASE_URL=postgresql://user:password@ep-xxx.eu-west-2.aws.neon.tech/neondb?ss
 
 # ── MLflow ───────────────────────────────────────────────
 # Serveur partagé avec IDNet — expérience distincte cc-fraud-detection
-MLFLOW_TRACKING_URI=https://your-mlflow-space.hf.space
-MLFLOW_TRACKING_USERNAME=your-user
-MLFLOW_TRACKING_PASSWORD=your-password
+MLFLOW_TRACKING_URI=https://VoxUp.hf.space
+MLFLOW_TRACKING_USERNAME=user
+MLFLOW_TRACKING_PASSWORD=password
 
 # ── AWS S3 ───────────────────────────────────────────────
 # Bucket partagé — préfixe dédié s3://.../cc-fraud/
-AWS_ACCESS_KEY_ID=your-key
-AWS_SECRET_ACCESS_KEY=your-secret
-AWS_DEFAULT_REGION=eu-west-1
+AWS_ACCESS_KEY_ID=key
+AWS_SECRET_ACCESS_KEY=secret
+AWS_DEFAULT_REGION=region
 
 # ── Prefect ──────────────────────────────────────────────
-PREFECT_API_KEY=your-prefect-api-key
+PREFECT_API_KEY=-prefect-api-key
 PREFECT_API_URL=https://api.prefect.cloud/api/accounts/<account-id>/workspaces/<workspace-id>
 
 # ── CC Fraud API ─────────────────────────────────────────
-CC_FRAUD_API_URL=https://<username>-cc-fraud-sentinel.hf.space/predict
+CC_FRAUD_API_URL=https://VoxUp-cc-fraud-sentinel.hf.space/predict
 
 # ── Alertes ──────────────────────────────────────────────
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/xxx
@@ -227,13 +227,13 @@ make deploy-api
 
 Synchronise `src/api/` vers `../cc-fraud-sentinel/` et push sur HF Space.
 
-API disponible sur : `https://<username>-cc-fraud-sentinel.hf.space`
-Docs Swagger : `https://<username>-cc-fraud-sentinel.hf.space/docs`
+API disponible sur : `https://VoxUp-cc-fraud-sentinel.hf.space`
+Docs Swagger : `https://VoxUp-cc-fraud-sentinel.hf.space/docs`
 
 ### 4. Connexion Prefect Cloud
 
 ```bash
-prefect cloud login --key your-prefect-api-key
+prefect cloud login --key -prefect-api-key
 ```
 
 ### 5. Lancer le pipeline complet — 4 terminaux
@@ -268,9 +268,9 @@ prefect deployment run 'cc-fraud-daily-pipeline/cc-fraud-daily-deployment'
 
 | Service | URL |
 |---|---|
-| Inference API | `https://<username>-cc-fraud-sentinel.hf.space` |
-| API Docs | `https://<username>-cc-fraud-sentinel.hf.space/docs` |
-| MLflow UI | `https://<username>-mlflow-server.hf.space` |
+| Inference API | `https://VoxUp-cc-fraud-sentinel.hf.space` |
+| API Docs | `https://VoxUp-cc-fraud-sentinel.hf.space/docs` |
+| MLflow UI | `https://VoxUp-mlflow-server.hf.space` |
 | Prefect Cloud | `https://app.prefect.cloud` |
 
 ---
